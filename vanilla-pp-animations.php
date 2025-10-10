@@ -42,7 +42,7 @@ function register_vanilla_pp_gsap_script() {
 	global $block_names;
 
 	if (vanilla_pp_animations_has_blocks($block_names)) {
-		wp_enqueue_script('vanilla-pp-animations-gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js', array(), '3.13.0', true);
+		wp_enqueue_script('vanilla-pp-animations-gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js', [], '3.13.0', true);
 	}
 }
 add_action('wp_enqueue_scripts', 'register_vanilla_pp_gsap_script');
