@@ -32,10 +32,7 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
-			{ __(
-				'Vanilla Pp Animations – hello from the editor!',
-				'vanilla-pp-animations'
-			) }
+			{ __( 'Animation Controller Block – hello from the editor!', 'animation-controller-block' ) }
 		</p>
 	);
 }
