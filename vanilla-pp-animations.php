@@ -18,7 +18,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function create_block_vanilla_pp_animations_block_init() {
-	register_block_type(__DIR__ . '/build/wrapper');
+	// Set up multi-block registration according to:
+	// https://developer.wordpress.org/news/2024/05/setting-up-a-multi-block-using-inner-blocks-and-post-meta/#setting-up-a-multi-block-plugin
+	register_block_type(__DIR__ . '/build/blocks/animation-wrapper-block');
+	register_block_type(__DIR__ . '/build/blocks/animation-controller-block');
 }
 
 add_action( 'init', 'create_block_vanilla_pp_animations_block_init' );
