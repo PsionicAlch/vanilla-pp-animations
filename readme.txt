@@ -1,5 +1,5 @@
-=== Vanilla Pp Animations ===
-Contributors:      The WordPress Contributors
+=== Vanilla++ Animations ===
+Contributors:      PsionicAlch
 Tags:              block
 Tested up to:      6.7
 Stable tag:        0.1.0
