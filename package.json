@@ -18,6 +18,10 @@
 		"env:stop": "wp-env stop"
 	},
 	"devDependencies": {
+		"@types/wordpress__block-editor": "^11.5.17",
+		"@types/wordpress__blocks": "^12.5.18",
+		"@wordpress/block-editor": "^15.5.0",
+		"@wordpress/blocks": "^15.5.0",
 		"@wordpress/env": "^10.32.0",
 		"@wordpress/scripts": "^30.25.0",
 		"concurrently": "^9.2.1",
