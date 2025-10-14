@@ -1,1 +1,5 @@
-console.log("Vanilla++ - Animations: Runtime loaded!")
+import { VanillaPPAnimations } from './core/runtime';
+
+document.addEventListener("DOMContentLoaded", () => {
+	new VanillaPPAnimations.Runtime(true);
+});

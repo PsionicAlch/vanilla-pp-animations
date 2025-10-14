@@ -18,6 +18,7 @@
 		"env:stop": "wp-env stop"
 	},
 	"devDependencies": {
+		"@types/gsap": "^1.20.2",
 		"@types/wordpress__block-editor": "^11.5.17",
 		"@types/wordpress__blocks": "^12.5.18",
 		"@wordpress/block-editor": "^15.5.0",
