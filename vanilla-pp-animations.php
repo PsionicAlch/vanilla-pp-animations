@@ -13,37 +13,10 @@
  * @package CreateBlock
  */
 
-include_once 'utils.php';
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$namespace = 'vanilla-pp-animations';
-$block_names = [
-	'animation-wrapper-block',
-	'animation-controller-block'
-];
+include_once __DIR__ . '/src/Plugin.php';
 
-// Register our custom blocks.
-function register_vanilla_pp_animations_blocks() {
-	global $block_names;
-
-	// Set up multi-block registration according to:
-	// https://developer.wordpress.org/news/2024/05/setting-up-a-multi-block-using-inner-blocks-and-post-meta/#setting-up-a-multi-block-plugin
-	foreach ($block_names as $block_name) {
-		register_block_type(__DIR__ . '/build/blocks/' . $block_name);
-	}
-}
-add_action( 'init', 'register_vanilla_pp_animations_blocks' );
-
-// Register required Javascript libraries as they are required.
-function register_vanilla_pp_gsap_script() {
-	global $namespace;
-	global $block_names;
-
-	if (vanilla_pp_animations_has_blocks($namespace, $block_names)) {
-		wp_enqueue_script('vanilla-pp-animations-gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js', [], '3.13.0', true);
-	}
-}
-add_action('wp_enqueue_scripts', 'register_vanilla_pp_gsap_script');
+\VanillaPP\Animations\Plugin::init();
