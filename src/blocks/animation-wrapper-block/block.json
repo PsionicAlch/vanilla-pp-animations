@@ -8,7 +8,92 @@
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
-	"attributes": {},
+	"attributes": {
+		"animation": {
+			"enum": ["to", "from", "fromto", "set"],
+			"default": "to"
+		},
+		"target": {
+			"enum": ["self", "children"],
+			"default": "self"
+		},
+		"trigger": {
+			"enum": ["onscreen"],
+			"default": "onscreen"
+		},
+		"propX": {
+			"type": "integer"
+		},
+		"propY": {
+			"type": "integer"
+		},
+		"propXPercentage": {
+			"type": "boolean"
+		},
+		"propYPercentage": {
+			"type": "boolean"
+		},
+		"propScaleIndividually": {
+			"type": "boolean"
+		},
+		"propScale": {
+			"type": "integer"
+		},
+		"propScaleX": {
+			"type": "integer"
+		},
+		"propScaleY": {
+			"type": "integer"
+		},
+		"propRotationType": {
+			"enum": ["degrees", "radians"]
+		},
+		"propRotation": {
+			"type": "number"
+		},
+		"propSkewIndividually": {
+			"type": "boolean"
+		},
+		"propSkewType": {
+			"enum": ["degrees", "radians"]
+		},
+		"propSkew": {
+			"type": "number"
+		},
+		"propSkewX": {
+			"type": "number"
+		},
+		"propSkewY": {
+			"type": "number"
+		},
+		"propTransformOrigin": {
+			"type": "string"
+		},
+		"propOpacity": {
+			"type": "integer"
+		},
+		"propAutoAlpha": {
+			"type": "integer"
+		},
+		"propDuration": {
+			"type": "integer"
+		},
+		"propRepeatInfinitely": {
+			"type": "boolean"
+		},
+		"propRepeat": {
+			"type": "integer"
+		},
+		"propDelay": {
+			"type": "integer"
+		},
+		"propStagger": {
+			"type": "number"
+		},
+		"propYoYo": {
+			"type": "boolean"
+		}
+	},
 	"supports": {
 		"html": false
 	},
