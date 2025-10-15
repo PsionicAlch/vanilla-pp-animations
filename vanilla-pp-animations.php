@@ -17,6 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-include_once __DIR__ . '/src/Plugin.php';
+include_once __DIR__ . '/build/Plugin.php';
 
 \VanillaPP\Animations\Plugin::init();

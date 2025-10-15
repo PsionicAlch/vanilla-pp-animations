@@ -24,7 +24,7 @@ class Plugin {
 
 	public static function enqueue_runtime() {
 		if ( Utils::has_blocks( self::$namespace, self::$block_names ) ) {
-			wp_enqueue_script('vanilla-pp-animations-runtime', plugins_url( '../build/runtime.js', __FILE__ ), [], '0.1.0', true);
+			wp_enqueue_script('vanilla-pp-animations-runtime', plugins_url( '../build-runtime/runtime.js', __FILE__ ), [], '0.1.0', true);
 		}
 	}
 }

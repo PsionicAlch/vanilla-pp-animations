@@ -34,3 +34,4 @@ node_modules/
 
 # Build file
 build
+build-runtime

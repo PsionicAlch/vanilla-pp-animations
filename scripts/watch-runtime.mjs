@@ -2,7 +2,7 @@ import { context } from 'esbuild';
 
 const ctx = await context({
   entryPoints: ['src/runtime/index.ts'],
-  outfile: 'build/runtime.js',
+  outfile: 'build-runtime/runtime.js',
   bundle: true,
   sourcemap: true,
   platform: 'browser',

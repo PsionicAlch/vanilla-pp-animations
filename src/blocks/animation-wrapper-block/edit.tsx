@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
+
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { Panel, PanelBody, SelectControl } from '@wordpress/components';
+import { Panel, PanelBody, SelectControl, TextControl } from '@wordpress/components';
 import { BlockEditProps } from '@wordpress/blocks';
 
 export default function Edit({ attributes, setAttributes }: BlockEditProps<any>) {
+	const { id } = attributes;
 	const domain = 'animation-wrapper-block';
+
+	useEffect(() => {
+		if (!id) {
+			setAttributes({ id: crypto.randomUUID() });
+		}
+	}, [id]);
 
 	return (
 		<>
@@ -22,6 +31,7 @@ export default function Edit({ attributes, setAttributes }: BlockEditProps<any>)
 							]}
 							onChange={(value) => setAttributes({ animation: value})}
 							__next40pxDefaultSize
+							__nextHasNoMarginBottom
 						/>
 
 						<SelectControl
@@ -33,11 +43,29 @@ export default function Edit({ attributes, setAttributes }: BlockEditProps<any>)
 							]}
 							onChange={(value) => setAttributes({ target: value})}
 							__next40pxDefaultSize
+							__nextHasNoMarginBottom
+						/>
+
+						<SelectControl
+							label={__('Trigger', domain)}
+							value={attributes.trigger || 'onscreen'}
+							options={[
+								{ label: __('On Screen', domain), value: 'onscreen' },
+							]}
+							onChange={(value) => setAttributes({ trigger: value})}
+							__next40pxDefaultSize
+							__nextHasNoMarginBottom
 						/>
 					</PanelBody>
 
 					<PanelBody title={__('Properties', domain)}>
-						Testing 2
+						<TextControl
+							__next40pxDefaultSize
+							__nextHasNoMarginBottom
+							label={__('Starting X', domain)}
+							value={attributes.propX || ''}
+							onChange={(value) => setAttributes({ propX: value })}
+						/>
 					</PanelBody>
 				</Panel>
 			</InspectorControls>

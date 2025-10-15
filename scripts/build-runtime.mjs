@@ -2,7 +2,7 @@ import { build } from 'esbuild';
 
 await build({
 	entryPoints: ['src/runtime/index.ts'],
-	outfile: 'build/runtime.js',
+	outfile: 'build-runtime/runtime.js',
 	bundle: true,
 	minify: true,
 	sourcemap: true,

@@ -5,14 +5,25 @@
 	"author": "PsionicAlch",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
+	"files": [
+		"readme.txt",
+		"vanilla-pp-animations.php",
+		"build",
+		"build-runtime"
+	],
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php --blocks-manifest && node scripts/build-runtime.mjs",
+		"build:blocks": "wp-scripts build --webpack-copy-php --blocks-manifest",
+		"build:runtime": "node scripts/build-runtime.mjs",
+		"build:zip": "wp-scripts build --webpack-copy-php --blocks-manifest && node scripts/build-runtime.mjs && wp-scripts plugin-zip",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "concurrently \"wp-scripts start --webpack-copy-php --blocks-manifest\" \"node scripts/watch-runtime.mjs\"",
+		"start:blocks": "wp-scripts start --webpack-copy-php --blocks-manifest",
+		"start:runtime": "node scripts/watch-runtime.mjs",
 		"env": "wp-env",
 		"env:start": "wp-env start",
 		"env:stop": "wp-env stop"
