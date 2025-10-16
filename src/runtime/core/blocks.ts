@@ -1,10 +1,6 @@
 export namespace VanillaPPAnimations {
-	export interface BlockAttributes {
-		// General block information.
+	export interface WrapperAttributes {
 		id?: string;
-		type?: string;
-
-		// Wrapper block information.
 		animation?: "to" | "from" | "fromto" | "set";
 		target?: string | HTMLElement;
 		trigger?: "onscreen";
