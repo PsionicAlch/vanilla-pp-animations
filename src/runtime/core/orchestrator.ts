@@ -1,6 +1,6 @@
 import { VanillaPPAnimations as Logger } from "./logger";
 import { VanillaPPAnimations as Constants } from "./constants";
-import { VanillaPPAnimations as Wrapper } from "./blocks/wrapper";
+import { VanillaPPAnimations as Wrapper } from "./wrapper";
 
 export namespace VanillaPPAnimations {
 	export class Orchestrator {
@@ -14,10 +14,11 @@ export namespace VanillaPPAnimations {
 		}
 
 		private setup_wrappers(): void {
-			const wrappers = document.querySelectorAll(`[${Constants.data_block_type_name}="wrapper"][${Constants.data_block_animation_trigger_name}="onscreen"]`);
+			const wrappers = document.querySelectorAll(Constants.wrapper_block_identifier);
 			wrappers.forEach((element) => {
 				if (element instanceof HTMLElement) {
 					const wrapper = Wrapper.WrapperBlock.from_html(element);
+					this.logger.info("Registered ", wrapper.vars.id, "!");
 					wrapper.run_animation();
 				}
 			});

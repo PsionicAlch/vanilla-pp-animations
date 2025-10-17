@@ -21,10 +21,122 @@
 			"default": "self"
 		},
 		"trigger": {
-			"enum": ["onscreen"],
+			"enum": ["onscreen", "controller"],
 			"default": "onscreen"
 		},
-		"propX": {
+		"duration": {
+			"type": "string"
+		},
+		"repeat": {
+			"type": "string"
+		},
+		"delay": {
+			"type": "string"
+		},
+		"yoyo": {
+			"type": "boolean",
+			"default": false
+		},
+		"ease": {
+			"enum": [
+				"none",
+				"power1.in",
+				"power1.inOut",
+				"power1.out",
+				"power2.in",
+				"power2.inOut",
+				"power2.out",
+				"power3.in",
+				"power3.inOut",
+				"power3.out",
+				"power4.in",
+				"power4.inOut",
+				"power4.out",
+				"back.in",
+				"back.inOut",
+				"back.out",
+				"bounce.in",
+				"bounce.inOut",
+				"bounce.out",
+				"circ.in",
+				"circ.inOut",
+				"circ.out",
+				"elastic.in",
+				"elastic.inOut",
+				"elastic.out",
+				"expo.in",
+				"expo.inOut",
+				"expo.out",
+				"sine.in",
+				"sine.inOut",
+				"sine.out",
+				"steps.in",
+				"steps.inOut",
+				"steps.out"
+			],
+			"default": "none"
+		},
+		"stagger": {
+			"type": "string"
+		},
+		"fromX": {
+			"type": "string"
+		},
+		"fromY": {
+			"type": "string"
+		},
+		"fromScaleX": {
+			"type": "string"
+		},
+		"fromScaleY": {
+			"type": "string"
+		},
+		"fromRotation": {
+			"type": "string"
+		},
+		"fromSkewX": {
+			"type": "string"
+		},
+		"fromSkewY": {
+			"type": "string"
+		},
+		"fromTransformOrigin": {
+			"type": "string"
+		},
+		"fromOpacity": {
+			"type": "string"
+		},
+		"fromAutoAlpha": {
+			"type": "string"
+		},
+		"toX": {
+			"type": "string"
+		},
+		"toY": {
+			"type": "string"
+		},
+		"toScaleX": {
+			"type": "string"
+		},
+		"toScaleY": {
+			"type": "string"
+		},
+		"toRotation": {
+			"type": "string"
+		},
+		"toSkewX": {
+			"type": "string"
+		},
+		"toSkewY": {
+			"type": "string"
+		},
+		"toTransformOrigin": {
+			"type": "string"
+		},
+		"toOpacity": {
+			"type": "string"
+		},
+		"toAutoAlpha": {
 			"type": "string"
 		}
 	},
