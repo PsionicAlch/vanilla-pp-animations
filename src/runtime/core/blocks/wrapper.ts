@@ -1,3 +1,6 @@
+import { gsap } from "gsap";
+import type { TweenVars } from "gsap";
+
 import { VanillaPPAnimations as Constants } from "../constants";
 import { VanillaPPAnimations as Types } from "../types";
 import { VanillaPPAnimations as StringUtils } from "../utils/string";
@@ -9,10 +12,10 @@ export namespace VanillaPPAnimations {
 		public readonly animation: Types.AnimationType;
 		public readonly target: Types.TargetType;
 		public readonly trigger: Types.TriggerType;
-		public readonly to_properties: gsap.TweenVars;
-		public readonly from_properties: gsap.TweenVars;
+		public readonly to_properties: TweenVars;
+		public readonly from_properties: TweenVars;
 
-		private constructor(id: string, controller_id: string, animation: Types.AnimationType, target: Types.TargetType, trigger: Types.TriggerType, to: gsap.TweenVars, from: gsap.TweenVars) {
+		private constructor(id: string, controller_id: string, animation: Types.AnimationType, target: Types.TargetType, trigger: Types.TriggerType, to: TweenVars, from: TweenVars) {
 			if (!id) {
 				throw new Error(`Missing required 'id'`);
 			} else {
@@ -39,8 +42,8 @@ export namespace VanillaPPAnimations {
 			let animation: Types.AnimationType = 'to';
 			let target: Types.TargetType = 'self';
 			let trigger: Types.TriggerType = 'onscreen';
-			let to_props: gsap.TweenVars = {};
-			let from_props: gsap.TweenVars = {};
+			let to_props: TweenVars = {};
+			let from_props: TweenVars = {};
 
 			for (const { name, value } of element.attributes) {
 				if (name === Constants.data_block_id_name) {
@@ -73,13 +76,13 @@ export namespace VanillaPPAnimations {
 			return new WrapperBlock(id, controller_id, animation, target, trigger, to_props, from_props);
 		}
 
-		public static from_data(id: string, controllerId: string, animation: "to" | "from" | "fromto" | "set", target: "self" | "children", trigger: "onscreen" | "controller", to: gsap.TweenVars, from: gsap.TweenVars): WrapperBlock {
+		public static from_data(id: string, controllerId: string, animation: Types.AnimationType, target: Types.TargetType, trigger: Types.TriggerType, to: gsap.TweenVars, from: gsap.TweenVars): WrapperBlock {
 			return new WrapperBlock(id, controllerId, animation, target, trigger, to, from);
 		}
 
 		public run_animation(): void {
 			if (this.trigger !== 'controller') {
-				const animation_target = (this.target === 'self') ? `[${Constants.data_block_id_name}="${this.id}]` : `[${Constants.data_block_id_name}="${this.id}] > *`;
+				const animation_target = (this.target === 'self') ? `[${Constants.data_block_id_name}="${this.id}"]` : `[${Constants.data_block_id_name}="${this.id}"] > *`;
 
 				if (this.animation === 'from') {
 					const from_vars = this.from_properties;

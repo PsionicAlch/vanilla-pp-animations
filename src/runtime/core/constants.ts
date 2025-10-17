@@ -14,4 +14,5 @@ export namespace VanillaPPAnimations {
 	export const valid_animations = ['to', 'from', 'fromto', 'set'] as const;
 	export const valid_targets = ['self', 'children'] as const;
 	export const valid_triggers = ['onscreen', 'controller'] as const;
+	export const valid_blocks = ['wrapper', 'controller'] as const;
 }

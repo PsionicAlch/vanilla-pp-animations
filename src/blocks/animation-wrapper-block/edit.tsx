@@ -6,7 +6,7 @@ import { Panel, PanelBody, SelectControl, TextControl } from '@wordpress/compone
 import { BlockEditProps } from '@wordpress/blocks';
 
 export default function Edit({ attributes, setAttributes }: BlockEditProps<any>) {
-	const { id } = attributes;
+	const { id, blockType } = attributes;
 	const domain = 'animation-wrapper-block';
 
 	useEffect(() => {
